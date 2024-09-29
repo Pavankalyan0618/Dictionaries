@@ -72,3 +72,21 @@ def manage():
     else:
       print('Invalid choice')
 
+def customer_request():
+     desired_item = input('Enter your desired order: ')
+     quantity = input('Enter Quantity')
+     dish_number = 0
+     for i in data.menu_items:
+        dish_number += 1
+        #print(data.menu_items[i][0])
+        #print(str(desired_item).upper())
+        if data.menu_items[i][0] == str(desired_item).upper() and int(quantity)>data.menu_items[i][2]:
+          print('we have what you ordered, but we only have',data.menu_items[i][2],'items in the stock')
+          print('Please dplace order as per the stock')
+        elif data.menu_items[i][0] == str(desired_item).upper() and int(quantity)<=data.menu_items[i][2]:
+          print('Great! we have what you ordered.')
+          print("Dish number is",i)
+          dish_number = i
+          break
+        elif dish_number == len(data.menu_items):
+          print('Sorry! we do not have what you ordered')
