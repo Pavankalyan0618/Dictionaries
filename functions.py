@@ -29,7 +29,7 @@ def get_item_number():
 
 def manage():
   while True:
-    print("\nHello Manager") #edit to show your name
+    print("\nHello Manager") 
     print("__________\n")
     print('Insert R to remove an item')
     print('Insert A to add an item')

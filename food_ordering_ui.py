@@ -54,7 +54,7 @@ def make_order():
   if item_code not in data.drink_items and int(quantity)>data.menu_items[f'{item_code}'][2]:
     print('Sorry! we only have',data.menu_items[f'{item_code}'][2],'items left in stock, Please enter the quantity as per the stock.')
     quantity,product,price = make_order()
-    if item_code not in data.drink_items and int(quantity)>data.menu_items[f'{item_code}'][2]:
+    if item_code not in data.drink_items and int(quantity)<data.menu_items[f'{item_code}'][2]:
       data.menu_items[item_code][2]-int(quantity)
       return quantity,product,price
   data.menu_items[item_code][2]-int(quantity)
